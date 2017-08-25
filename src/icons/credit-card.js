@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const CreditCard = props => {
-  const { color, size, ...otherProps } = props;
+const CreditCard = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +18,9 @@ const CreditCard = props => {
         ry="2"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <line
         x1="1"
@@ -31,22 +29,12 @@ const CreditCard = props => {
         y2="10"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-CreditCard.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-CreditCard.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default CreditCard;

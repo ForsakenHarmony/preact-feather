@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Tv = props => {
-  const { color, size, ...otherProps } = props;
+const Tv = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,30 +18,20 @@ const Tv = props => {
         ry="2"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <polyline
         points="17 2 12 7 7 2"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-Tv.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Tv.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Tv;

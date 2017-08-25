@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Loader = props => {
-  const { color, size, ...otherProps } = props;
+const Loader = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const Loader = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <line x1="12" y1="2" x2="12" y2="6" />
@@ -26,16 +24,6 @@ const Loader = props => {
       <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" />
     </svg>
   );
-};
-
-Loader.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Loader.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Loader;

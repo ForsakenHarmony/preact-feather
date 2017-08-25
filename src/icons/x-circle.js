@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const XCircle = props => {
-  const { color, size, ...otherProps } = props;
+const XCircle = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const XCircle = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <circle cx="12" cy="12" r="10" />
@@ -21,16 +19,6 @@ const XCircle = props => {
       <line x1="9" y1="9" x2="15" y2="15" />
     </svg>
   );
-};
-
-XCircle.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-XCircle.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default XCircle;

@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Shuffle = props => {
-  const { color, size, ...otherProps } = props;
+const Shuffle = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +13,9 @@ const Shuffle = props => {
         points="16 3 21 3 21 8"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <line
         x1="4"
@@ -26,17 +24,17 @@ const Shuffle = props => {
         y2="3"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <polyline
         points="21 16 21 21 16 21"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <line
         x1="15"
@@ -45,9 +43,9 @@ const Shuffle = props => {
         y2="21"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <line
         x1="4"
@@ -56,22 +54,12 @@ const Shuffle = props => {
         y2="9"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-Shuffle.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Shuffle.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Shuffle;

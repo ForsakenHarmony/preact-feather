@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Speaker = props => {
-  const { color, size, ...otherProps } = props;
+const Speaker = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +18,9 @@ const Speaker = props => {
         ry="2"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <circle
         cx="12"
@@ -30,9 +28,9 @@ const Speaker = props => {
         r="4"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <line
         x1="12"
@@ -41,22 +39,12 @@ const Speaker = props => {
         y2="6"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-Speaker.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Speaker.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Speaker;

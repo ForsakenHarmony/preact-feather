@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const SkipBack = props => {
-  const { color, size, ...otherProps } = props;
+const SkipBack = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +13,9 @@ const SkipBack = props => {
         points="19 20 9 12 19 4 19 20"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <line
         x1="5"
@@ -26,22 +24,12 @@ const SkipBack = props => {
         y2="5"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-SkipBack.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-SkipBack.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default SkipBack;

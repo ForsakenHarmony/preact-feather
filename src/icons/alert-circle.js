@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const AlertCircle = props => {
-  const { color, size, ...otherProps } = props;
+const AlertCircle = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const AlertCircle = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <circle cx="12" cy="12" r="10" />
@@ -21,16 +19,6 @@ const AlertCircle = props => {
       <line x1="12" y1="16" x2="12" y2="16" />
     </svg>
   );
-};
-
-AlertCircle.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-AlertCircle.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default AlertCircle;

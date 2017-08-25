@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Voicemail = props => {
-  const { color, size, ...otherProps } = props;
+const Voicemail = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,8 +15,8 @@ const Voicemail = props => {
         r="4.5"
         fill="none"
         stroke={color}
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <circle
         cx="18.5"
@@ -26,8 +24,8 @@ const Voicemail = props => {
         r="4.5"
         fill="none"
         stroke={color}
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <line
         x1="5.5"
@@ -36,21 +34,11 @@ const Voicemail = props => {
         y2="16"
         fill="none"
         stroke={color}
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-Voicemail.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Voicemail.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Voicemail;

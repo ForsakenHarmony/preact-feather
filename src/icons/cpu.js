@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Cpu = props => {
-  const { color, size, ...otherProps } = props;
+const Cpu = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const Cpu = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
@@ -28,16 +26,6 @@ const Cpu = props => {
       <line x1="1" y1="14" x2="4" y2="14" />
     </svg>
   );
-};
-
-Cpu.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Cpu.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Cpu;

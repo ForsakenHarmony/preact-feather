@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const UploadCloud = props => {
-  const { color, size, ...otherProps } = props;
+const UploadCloud = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const UploadCloud = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <polyline points="16 16 12 12 8 16" />
@@ -22,16 +20,6 @@ const UploadCloud = props => {
       <polyline points="16 16 12 12 8 16" />
     </svg>
   );
-};
-
-UploadCloud.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-UploadCloud.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default UploadCloud;

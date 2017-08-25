@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Share2 = props => {
-  const { color, size, ...otherProps } = props;
+const Share2 = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const Share2 = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <circle cx="18" cy="5" r="3" />
@@ -23,16 +21,6 @@ const Share2 = props => {
       <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
     </svg>
   );
-};
-
-Share2.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Share2.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Share2;

@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Sun = props => {
-  const { color, size, ...otherProps } = props;
+const Sun = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const Sun = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <circle cx="12" cy="12" r="5" />
@@ -27,16 +25,6 @@ const Sun = props => {
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
     </svg>
   );
-};
-
-Sun.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Sun.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Sun;

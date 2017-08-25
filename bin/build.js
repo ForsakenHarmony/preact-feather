@@ -11,6 +11,8 @@ const rootDir = path.join(__dirname, '..');
 glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
   fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), '', 'utf-8');
 
+  let allExports = '';
+
   icons.forEach((i) => {
     const svg = fs.readFileSync(i, 'utf-8');
     const id = path.basename(i, '.svg');
@@ -22,9 +24,6 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
 
     $('*').each((index, el) => {
       Object.keys(el.attribs).forEach((x) => {
-        if (x.includes('-')) {
-          $(el).attr(camelcase(x), el.attribs[x]).removeAttr(x);
-        }
         if (x === 'stroke') {
           $(el).attr(x, 'currentColor');
         }
@@ -36,11 +35,9 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
     });
 
     const element = `
-      import React from 'react';
-      import PropTypes from 'prop-types';
-
-      const ${uppercamelcase(id)} = (props) => {
-        const { color, size, ...otherProps } = props;
+      const ${uppercamelcase(id)} = ({ color, size, ...otherProps }) => {
+        color = color || 'currentColor';
+        size = size || '24';
         return (
           ${
             $('svg').toString()
@@ -51,19 +48,6 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
           }
         )
       };
-
-      ${uppercamelcase(id)}.propTypes = {
-        color: PropTypes.string,
-        size: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number
-        ]),
-      }
-
-      ${uppercamelcase(id)}.defaultProps = {
-        color: 'currentColor',
-        size: '24',
-      }
 
       export default ${uppercamelcase(id)}
     `;
@@ -77,7 +61,8 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
 
     fs.writeFileSync(location, component, 'utf-8');
 
-    const exportString = `export ${uppercamelcase(id)} from './icons/${id}';\r\n`;
-    fs.appendFileSync(path.join(rootDir, 'src', 'index.js'), exportString, 'utf-8');
+    allExports += `export ${uppercamelcase(id)} from './icons/${id}';\r\n`;
   });
+
+  fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), allExports, 'utf-8');
 });

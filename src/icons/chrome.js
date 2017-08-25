@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Chrome = props => {
-  const { color, size, ...otherProps } = props;
+const Chrome = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const Chrome = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <circle cx="12" cy="12" r="10" />
@@ -23,16 +21,6 @@ const Chrome = props => {
       <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
     </svg>
   );
-};
-
-Chrome.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Chrome.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Chrome;

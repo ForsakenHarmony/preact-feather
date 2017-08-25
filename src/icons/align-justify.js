@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const AlignJustify = props => {
-  const { color, size, ...otherProps } = props;
+const AlignJustify = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const AlignJustify = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <line x1="21" y1="10" x2="3" y2="10" />
@@ -22,16 +20,6 @@ const AlignJustify = props => {
       <line x1="21" y1="18" x2="3" y2="18" />
     </svg>
   );
-};
-
-AlignJustify.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-AlignJustify.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default AlignJustify;

@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const MicOff = props => {
-  const { color, size, ...otherProps } = props;
+const MicOff = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const MicOff = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <line x1="1" y1="1" x2="23" y2="23" />
@@ -23,16 +21,6 @@ const MicOff = props => {
       <line x1="8" y1="23" x2="16" y2="23" />
     </svg>
   );
-};
-
-MicOff.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-MicOff.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default MicOff;

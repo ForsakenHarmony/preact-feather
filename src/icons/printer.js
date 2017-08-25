@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Printer = props => {
-  const { color, size, ...otherProps } = props;
+const Printer = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const Printer = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <polyline points="6 9 6 2 18 2 18 9" />
@@ -21,16 +19,6 @@ const Printer = props => {
       <rect x="6" y="14" width="12" height="8" />
     </svg>
   );
-};
-
-Printer.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Printer.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Printer;

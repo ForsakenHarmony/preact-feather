@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const BatteryCharging = props => {
-  const { color, size, ...otherProps } = props;
+const BatteryCharging = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +13,9 @@ const BatteryCharging = props => {
         d="M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <line
         x1="23"
@@ -26,30 +24,20 @@ const BatteryCharging = props => {
         y2="11"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
       <polyline
         points="11 6 7 12 13 12 9 18"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-BatteryCharging.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-BatteryCharging.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default BatteryCharging;

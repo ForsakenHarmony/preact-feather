@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const ZoomIn = props => {
-  const { color, size, ...otherProps } = props;
+const ZoomIn = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const ZoomIn = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <circle cx="11" cy="11" r="8" />
@@ -22,16 +20,6 @@ const ZoomIn = props => {
       <line x1="8" y1="11" x2="14" y2="11" />
     </svg>
   );
-};
-
-ZoomIn.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-ZoomIn.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default ZoomIn;

@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const AlertOctagon = props => {
-  const { color, size, ...otherProps } = props;
+const AlertOctagon = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +9,9 @@ const AlertOctagon = props => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       {...otherProps}
     >
       <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />
@@ -21,16 +19,6 @@ const AlertOctagon = props => {
       <line x1="12" y1="16" x2="12" y2="16" />
     </svg>
   );
-};
-
-AlertOctagon.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-AlertOctagon.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default AlertOctagon;

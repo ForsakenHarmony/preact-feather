@@ -1,8 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const Slack = props => {
-  const { color, size, ...otherProps } = props;
+const Slack = ({ color, size, ...otherProps }) => {
+  color = color || 'currentColor';
+  size = size || '24';
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,8 +13,8 @@ const Slack = props => {
         d="M22.08 9C19.81 1.41 16.54-.35 9 1.92S-.35 7.46 1.92 15 7.46 24.35 15 22.08 24.35 16.54 22.08 9z"
         fill="none"
         stroke={color}
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <line
         x1="12.57"
@@ -25,9 +23,9 @@ const Slack = props => {
         y2="16.39"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <line
         x1="7.85"
@@ -36,9 +34,9 @@ const Slack = props => {
         y2="18.01"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <line
         x1="16.39"
@@ -47,9 +45,9 @@ const Slack = props => {
         y2="11.43"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
       <line
         x1="18.01"
@@ -58,22 +56,12 @@ const Slack = props => {
         y2="16.15"
         fill="none"
         stroke={color}
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="2"
+        stroke-linecap="round"
+        stroke-miterlimit="10"
+        stroke-width="2"
       />
     </svg>
   );
-};
-
-Slack.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Slack.defaultProps = {
-  color: 'currentColor',
-  size: '24',
 };
 
 export default Slack;
