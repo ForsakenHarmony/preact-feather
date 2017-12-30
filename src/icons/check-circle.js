@@ -1,6 +1,8 @@
-const CheckCircle = ({ color, size, ...otherProps }) => {
-  color = color || 'currentColor';
-  size = size || '24';
+const CheckCircle = ({
+  color = 'currentColor',
+  size = '24',
+  ...otherProps
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,13 +11,13 @@ const CheckCircle = ({ color, size, ...otherProps }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...otherProps}
     >
-      <path d="M22 11.07V12a10 10 0 1 1-5.93-9.14" />
-      <polyline points="23 3 12 14 9 11" />
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
     </svg>
   );
 };

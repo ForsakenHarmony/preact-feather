@@ -1,6 +1,5 @@
 const fs = require('fs');
 const glob = require('glob');
-const camelcase = require('camelcase');
 const uppercamelcase = require('uppercamelcase');
 const path = require('path');
 const cheerio = require('cheerio');
@@ -35,13 +34,14 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
     });
 
     const element = `
-      const ${uppercamelcase(id)} = ({ color, size, ...otherProps }) => {
-        color = color || 'currentColor';
-        size = size || '24';
+      const ${uppercamelcase(id)} = ({ color = 'currentColor', size = '24', ...otherProps }) => {
         return (
           ${
             $('svg').toString()
               .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
+              .replace('stroke-width', 'strokeWidth')
+              .replace('stroke-linecap', 'strokeLinecap')
+              .replace('stroke-linejoin', 'strokeLinejoin')
               .replace('width="24"', 'width={size}')
               .replace('height="24"', 'height={size}')
               .replace('otherProps="..."', '{...otherProps}')
@@ -61,8 +61,9 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
 
     fs.writeFileSync(location, component, 'utf-8');
 
-    allExports += `export ${uppercamelcase(id)} from './icons/${id}';\r\n`;
+    allExports += `export { default as ${uppercamelcase(id)} } from './icons/${id}';\n`;
   });
 
   fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), allExports, 'utf-8');
+  fs.writeFileSync(path.join(rootDir, 'dist', 'index.es6.js'), allExports, 'utf-8');
 });

@@ -1,6 +1,4 @@
-const BellOff = ({ color, size, ...otherProps }) => {
-  color = color || 'currentColor';
-  size = size || '24';
+const BellOff = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,9 +7,9 @@ const BellOff = ({ color, size, ...otherProps }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...otherProps}
     >
       <path d="M8.56 2.9A7 7 0 0 1 19 9v4m-2 4H2a3 3 0 0 0 3-3V9a7 7 0 0 1 .78-3.22M13.73 21a2 2 0 0 1-3.46 0" />

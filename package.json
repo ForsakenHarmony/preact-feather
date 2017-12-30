@@ -1,12 +1,13 @@
 {
   "name": "preact-feather",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Preact component for Feather icons",
   "main": "dist/index.js",
   "module": "dist/index.es6.js",
   "jsnext:main": "dist/index.es6.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
+    "lint": "eslint src bin",
     "build": "node ./bin/build && babel src --out-dir dist --ignore src/feather"
   },
   "repository": {
@@ -15,6 +16,7 @@
   },
   "keywords": [
     "react",
+    "preact",
     "icons",
     "svg",
     "inline",
@@ -28,22 +30,24 @@
   },
   "homepage": "https://github.com/ForsakenHarmony/preact-feather#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.1.2",
     "babel-plugin-jsx-pragmatic": "^1.0.2",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "camelcase": "^4.1.0",
     "cheerio": "^1.0.0-rc.1",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
     "glob": "^7.1.2",
     "ncp": "^2.0.0",
-    "prettier": "^1.4.4",
+    "prettier": "^1.9.2",
     "uppercamelcase": "^3.0.0"
   }
 }

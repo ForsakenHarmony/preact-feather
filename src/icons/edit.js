@@ -1,6 +1,4 @@
-const Edit = ({ color, size, ...otherProps }) => {
-  color = color || 'currentColor';
-  size = size || '24';
+const Edit = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,9 +7,9 @@ const Edit = ({ color, size, ...otherProps }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...otherProps}
     >
       <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />

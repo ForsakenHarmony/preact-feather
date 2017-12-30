@@ -1,6 +1,8 @@
-const PhoneForwarded = ({ color, size, ...otherProps }) => {
-  color = color || 'currentColor';
-  size = size || '24';
+const PhoneForwarded = ({
+  color = 'currentColor',
+  size = '24',
+  ...otherProps
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,9 +11,9 @@ const PhoneForwarded = ({ color, size, ...otherProps }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...otherProps}
     >
       <polyline points="19 1 23 5 19 9" />

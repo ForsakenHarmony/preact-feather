@@ -1,6 +1,4 @@
-const ArrowLeft = ({ color, size, ...otherProps }) => {
-  color = color || 'currentColor';
-  size = size || '24';
+const ArrowLeft = ({ color = 'currentColor', size = '24', ...otherProps }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,13 +7,13 @@ const ArrowLeft = ({ color, size, ...otherProps }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...otherProps}
     >
-      <line x1="20" y1="12" x2="4" y2="12" />
-      <polyline points="10 18 4 12 10 6" />
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5" />
     </svg>
   );
 };

@@ -1,2 +1,4 @@
 bin
 .babelrc
+src
+.vscode
