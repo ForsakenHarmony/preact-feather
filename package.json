@@ -1,6 +1,6 @@
 {
   "name": "preact-feather",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Preact component for Feather icons",
   "main": "dist/index.js",
   "module": "dist/index.es6.js",
