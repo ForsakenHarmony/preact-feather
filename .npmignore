@@ -2,3 +2,5 @@ bin
 .babelrc
 src
 .vscode
+.idea
+feather

@@ -7,7 +7,7 @@ const prettier = require('prettier');
 
 const rootDir = path.join(__dirname, '..');
 
-glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
+glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
   fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), '', 'utf-8');
 
   let allExports = '';
@@ -34,20 +34,18 @@ glob(`${rootDir}/src/feather/icons/**.svg`, (err, icons) => {
     });
 
     const element = `
-      const ${uppercamelcase(id)} = ({ color = 'currentColor', size = '24', ...otherProps }) => {
-        return (
-          ${
-            $('svg').toString()
-              .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
-              .replace('stroke-width', 'strokeWidth')
-              .replace('stroke-linecap', 'strokeLinecap')
-              .replace('stroke-linejoin', 'strokeLinejoin')
-              .replace('width="24"', 'width={size}')
-              .replace('height="24"', 'height={size}')
-              .replace('otherProps="..."', '{...otherProps}')
-          }
-        )
-      };
+      const ${uppercamelcase(id)} = ({ color = 'currentColor', size = '24', ...otherProps }) => (
+        ${
+          $('svg').toString()
+            .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
+            .replace('stroke-width', 'strokeWidth')
+            .replace('stroke-linecap', 'strokeLinecap')
+            .replace('stroke-linejoin', 'strokeLinejoin')
+            .replace('width="24"', 'width={size}')
+            .replace('height="24"', 'height={size}')
+            .replace('otherProps="..."', '{...otherProps}')
+        }
+      );
 
       export default ${uppercamelcase(id)}
     `;
