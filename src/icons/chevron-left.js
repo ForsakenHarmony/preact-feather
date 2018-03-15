@@ -10,9 +10,9 @@ const ChevronLeft = ({
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...otherProps}
   >
     <polyline points="15 18 9 12 15 6" />

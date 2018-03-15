@@ -6,9 +6,9 @@ const Bold = ({ color = 'currentColor', size = '24', ...otherProps }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...otherProps}
   >
     <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z" />

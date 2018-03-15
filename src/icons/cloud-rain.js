@@ -6,9 +6,9 @@ const CloudRain = ({ color = 'currentColor', size = '24', ...otherProps }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...otherProps}
   >
     <line x1="16" y1="13" x2="16" y2="21" />

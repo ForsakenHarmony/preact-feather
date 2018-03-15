@@ -6,9 +6,9 @@ const Slack = ({ color = 'currentColor', size = '24', ...otherProps }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...otherProps}
   >
     <path d="M22.08 9C19.81 1.41 16.54-.35 9 1.92S-.35 7.46 1.92 15 7.46 24.35 15 22.08 24.35 16.54 22.08 9z" />

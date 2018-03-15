@@ -6,9 +6,9 @@ const ZapOff = ({ color = 'currentColor', size = '24', ...otherProps }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...otherProps}
   >
     <polyline points="12.41 6.75 13 2 10.57 4.92" />

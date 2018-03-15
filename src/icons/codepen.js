@@ -6,9 +6,9 @@ const Codepen = ({ color = 'currentColor', size = '24', ...otherProps }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
     {...otherProps}
   >
     <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
