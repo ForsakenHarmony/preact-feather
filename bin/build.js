@@ -38,9 +38,6 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
         ${
           $('svg').toString()
             .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
-            .replace('stroke-width', 'strokeWidth')
-            .replace('stroke-linecap', 'strokeLinecap')
-            .replace('stroke-linejoin', 'strokeLinejoin')
             .replace('width="24"', 'width={size}')
             .replace('height="24"', 'height={size}')
             .replace('otherProps="..."', '{...otherProps}')
