@@ -12,7 +12,7 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
 
   let allExports = '';
 
-  icons.forEach((i) => {
+  icons.forEach(i => {
     const svg = fs.readFileSync(i, 'utf-8');
     const id = path.basename(i, '.svg');
     const $ = cheerio.load(svg, {
@@ -22,7 +22,7 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
     const location = path.join(rootDir, 'src/icons', fileName);
 
     $('*').each((index, el) => {
-      Object.keys(el.attribs).forEach((x) => {
+      Object.keys(el.attribs).forEach(x => {
         if (x === 'stroke') {
           $(el).attr(x, 'currentColor');
         }
@@ -34,14 +34,15 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
     });
 
     const element = `
-      const ${uppercamelcase(id)} = ({ color = 'currentColor', size = '24', ...otherProps }) => (
-        ${
-          $('svg').toString()
-            .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
-            .replace('width="24"', 'width={size}')
-            .replace('height="24"', 'height={size}')
-            .replace('otherProps="..."', '{...otherProps}')
-        }
+      const ${uppercamelcase(
+        id
+      )} = ({ color = 'currentColor', size = '24', ...otherProps }) => (
+        ${$('svg')
+          .toString()
+          .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
+          .replace('width="24"', 'width={size}')
+          .replace('height="24"', 'height={size}')
+          .replace('otherProps="..."', '{...otherProps}')}
       );
 
       export default ${uppercamelcase(id)}
@@ -56,9 +57,10 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
 
     fs.writeFileSync(location, component, 'utf-8');
 
-    allExports += `export { default as ${uppercamelcase(id)} } from './icons/${id}';\n`;
+    allExports += `export { default as ${uppercamelcase(
+      id
+    )} } from './icons/${id}';\n`;
   });
 
   fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), allExports, 'utf-8');
-  fs.writeFileSync(path.join(rootDir, 'dist', 'index.es6.js'), allExports, 'utf-8');
 });
