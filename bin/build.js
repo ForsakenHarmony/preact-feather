@@ -11,10 +11,13 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
   fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), '', 'utf-8');
 
   let allExports = '';
+  let tsDef =
+    'import { FunctionalComponent } from "preact";\n\ndeclare module \'preact-feather\' {\n  type FeatherProps = {\n    color?: string,\n    size?: string,\n  } & JSX.SVGAttributes;\n\n';
 
   icons.forEach(i => {
     const svg = fs.readFileSync(i, 'utf-8');
     const id = path.basename(i, '.svg');
+    const camelId = uppercamelcase(id);
     const $ = cheerio.load(svg, {
       xmlMode: true,
     });
@@ -34,9 +37,7 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
     });
 
     const element = `
-      const ${uppercamelcase(
-        id
-      )} = ({ color = 'currentColor', size = '24', ...otherProps }) => (
+      const ${camelId} = ({ color = 'currentColor', size = '24', ...otherProps }) => (
         ${$('svg')
           .toString()
           .replace(new RegExp('stroke="currentColor"', 'g'), 'stroke={color}')
@@ -45,7 +46,7 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
           .replace('otherProps="..."', '{...otherProps}')}
       );
 
-      export default ${uppercamelcase(id)}
+      export default ${camelId}
     `;
 
     const component = prettier.format(element, {
@@ -57,10 +58,14 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
 
     fs.writeFileSync(location, component, 'utf-8');
 
-    allExports += `export { default as ${uppercamelcase(
-      id
-    )} } from './icons/${id}';\n`;
+    allExports += `export { default as ${camelId} } from './icons/${id}';\n`;
+    tsDef += `  export const ${camelId}: FunctionalComponent<FeatherProps>;\n`;
   });
 
   fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), allExports, 'utf-8');
+  fs.writeFileSync(
+    path.join(rootDir, 'dist', 'index.d.ts'),
+    tsDef + '}\n',
+    'utf-8'
+  );
 });

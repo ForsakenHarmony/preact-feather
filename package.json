@@ -7,6 +7,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "umd:main": "dist/index.umd.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "exit 0",
     "build": "node ./bin/build && microbundle src/index.js",
@@ -39,7 +40,11 @@
     "microbundle": "^0.9.0",
     "ncp": "^2.0.0",
     "prettier": "^1.15.3",
-    "uppercamelcase": "^3.0.0"
+    "uppercamelcase": "^3.0.0",
+    "preact": "^8.4.2"
+  },
+  "peerDependencies": {
+    "preact": "*"
   },
   "husky": {
     "hooks": {
