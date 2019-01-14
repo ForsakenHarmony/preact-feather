@@ -2,16 +2,18 @@
   "name": "preact-feather",
   "version": "3.1.1",
   "description": "Preact components for Feather icons",
-  "esnext": "src/index.js",
-  "source": "src/index.js",
+  "esnext": "src/index.ts",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "umd:main": "dist/index.umd.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "test": "exit 0",
-    "build": "node ./bin/build && microbundle src/index.js",
-    "prettier": "prettier {src,bin}/**/*.js --write"
+    "build": "node ./bin/build && yarn build:es && yarn build:main",
+    "build:es": "microbundle -f es --no-compress",
+    "build:main": "microbundle -f cjs,umd",
+    "prettier": "prettier {src,bin}/**/*.{js,ts,tsx} --write"
   },
   "repository": "ForsakenHarmony/preact-feather.git",
   "keywords": [

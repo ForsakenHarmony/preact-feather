@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+
+    "newLine": "lf",
+    "module": "esnext",
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "dist/es",
+    "declaration": true,
+
+    "jsx": "react",
+    "jsxFactory": "h",
+
+    "lib": ["es6", "dom", "esnext"],
+
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    "baseUrl": ".",
+    "paths": { "*": ["typings/*"] }
+  },
+  "include": ["src/**/*.ts", "typings/**/*.d.ts"],
+  "files": ["src/index.ts"]
+}
