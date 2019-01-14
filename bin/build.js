@@ -12,7 +12,7 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
 
   let allExports = '';
   let tsDef =
-    'import { FunctionalComponent } from "preact";\n\ndeclare module \'preact-feather\' {\n  type FeatherProps = {\n    color?: string,\n    size?: string,\n  } & JSX.SVGAttributes;\n\n';
+    'import { FunctionalComponent } from "preact";\n\ndeclare module \'preact-feather\' {\n  interface FeatherProps extends JSX.SVGAttributes {\n    color?: string,\n  }\n\n';
 
   icons.forEach(i => {
     const svg = fs.readFileSync(i, 'utf-8');
