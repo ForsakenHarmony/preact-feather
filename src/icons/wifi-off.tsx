@@ -1,7 +1,9 @@
 import { h, FunctionalComponent } from 'preact';
 import { FeatherProps } from '../types';
 
-export const WifiOff: FunctionalComponent<FeatherProps> = (props: any) => {
+export const WifiOff: FunctionalComponent<FeatherProps> = (
+  props: FeatherProps
+) => {
   const color = props.color || 'currentColor';
   const size = props.size || 24;
   delete props.color;
@@ -26,7 +28,7 @@ export const WifiOff: FunctionalComponent<FeatherProps> = (props: any) => {
       <path d="M10.71 5.05A16 16 0 0 1 22.58 9" />
       <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88" />
       <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
-      <line x1="12" y1="20" x2="12" y2="20" />
+      <line x1="12" y1="20" x2="12.01" y2="20" />
     </svg>
   );
 };

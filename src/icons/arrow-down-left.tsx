@@ -2,7 +2,7 @@ import { h, FunctionalComponent } from 'preact';
 import { FeatherProps } from '../types';
 
 export const ArrowDownLeft: FunctionalComponent<FeatherProps> = (
-  props: any
+  props: FeatherProps
 ) => {
   const color = props.color || 'currentColor';
   const size = props.size || 24;

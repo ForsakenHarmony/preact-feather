@@ -38,7 +38,7 @@ glob(`${rootDir}/feather/icons/**.svg`, (err, icons) => {
       import { h, FunctionalComponent } from 'preact';
       import { FeatherProps } from "../types";
 
-      export const ${camelId}: FunctionalComponent<FeatherProps> = (props: any) => {
+      export const ${camelId}: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
         const color = props.color || 'currentColor';
         const size = props.size || 24;
         delete props.color;

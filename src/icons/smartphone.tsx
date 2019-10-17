@@ -1,7 +1,9 @@
 import { h, FunctionalComponent } from 'preact';
 import { FeatherProps } from '../types';
 
-export const Smartphone: FunctionalComponent<FeatherProps> = (props: any) => {
+export const Smartphone: FunctionalComponent<FeatherProps> = (
+  props: FeatherProps
+) => {
   const color = props.color || 'currentColor';
   const size = props.size || 24;
   delete props.color;
@@ -21,7 +23,7 @@ export const Smartphone: FunctionalComponent<FeatherProps> = (props: any) => {
       {...props}
     >
       <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-      <line x1="12" y1="18" x2="12" y2="18" />
+      <line x1="12" y1="18" x2="12.01" y2="18" />
     </svg>
   );
 };

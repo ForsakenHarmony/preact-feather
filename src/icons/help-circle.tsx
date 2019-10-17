@@ -1,7 +1,9 @@
 import { h, FunctionalComponent } from 'preact';
 import { FeatherProps } from '../types';
 
-export const HelpCircle: FunctionalComponent<FeatherProps> = (props: any) => {
+export const HelpCircle: FunctionalComponent<FeatherProps> = (
+  props: FeatherProps
+) => {
   const color = props.color || 'currentColor';
   const size = props.size || 24;
   delete props.color;
@@ -22,7 +24,7 @@ export const HelpCircle: FunctionalComponent<FeatherProps> = (props: any) => {
     >
       <circle cx="12" cy="12" r="10" />
       <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-      <line x1="12" y1="17" x2="12" y2="17" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
     </svg>
   );
 };

@@ -1,7 +1,9 @@
 import { h, FunctionalComponent } from 'preact';
 import { FeatherProps } from '../types';
 
-export const LifeBuoy: FunctionalComponent<FeatherProps> = (props: any) => {
+export const LifeBuoy: FunctionalComponent<FeatherProps> = (
+  props: FeatherProps
+) => {
   const color = props.color || 'currentColor';
   const size = props.size || 24;
   delete props.color;

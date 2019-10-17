@@ -1,7 +1,7 @@
 import { h, FunctionalComponent } from 'preact';
 import { FeatherProps } from '../types';
 
-export const Eye: FunctionalComponent<FeatherProps> = (props: any) => {
+export const Eye: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
   const color = props.color || 'currentColor';
   const size = props.size || 24;
   delete props.color;
