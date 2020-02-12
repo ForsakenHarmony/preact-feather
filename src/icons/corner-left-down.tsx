@@ -4,9 +4,9 @@ import { FeatherProps } from '../types';
 export const CornerLeftDown: FunctionalComponent<FeatherProps> = (
 	props: FeatherProps
 ) => {
-	const color = props.color ?? 'currentColor';
-	const size = props.size ?? 24;
-	const stroke = props.stroke ?? 2;
+	const color = props.color || 'currentColor';
+	const size = props.size || 24;
+	const stroke = props.stroke || '2';
 	delete props.color;
 	delete props.size;
 	delete props.stroke;

@@ -28,8 +28,10 @@ icons.forEach(name => {
     export const ${camelId}: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
       const color = props.color || 'currentColor';
       const size = props.size || 24;
+      const stroke = props.stroke || '2';
       delete props.color;
       delete props.size;
+      delete props.stroke;
     
       return (
         <svg
@@ -39,7 +41,7 @@ icons.forEach(name => {
           viewBox="0 0 24 24"
           fill="none"
           stroke={color}
-          stroke-width="2"
+          stroke-width={stroke}
           stroke-linecap="round"
           stroke-linejoin="round"
           {...props}
