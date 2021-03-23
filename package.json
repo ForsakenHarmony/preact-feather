@@ -2,13 +2,13 @@
   "name": "preact-feather",
   "version": "4.2.0",
   "description": "Preact components for Feather icons",
-  "source": "src/index.ts",
-  "main": "dist/index.cjs.js",
-  "cjs:main": "dist/index.cjs.js",
-  "module": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
-  "typings": "dist/index.d.ts",
-  "sideEffects": false,
+  "homepage": "https://github.com/ForsakenHarmony/preact-feather#readme",
+  "repository": "ForsakenHarmony/preact-feather.git",
+  "author": "Leah <npm.leah@hrmny.sh>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ForsakenHarmony/preact-feather/issues"
+  },
   "scripts": {
     "test": "exit 0",
     "build": "node ./bin/build && yarn build:es && yarn build:main",
@@ -19,7 +19,17 @@
     "prepare": "husky install .config/husky",
     "release": "yarn build && changeset publish"
   },
-  "repository": "ForsakenHarmony/preact-feather.git",
+  "source": "src/index.ts",
+  "main": "dist/index.cjs.js",
+  "cjs:main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
   "keywords": [
     "react",
     "preact",
@@ -29,12 +39,6 @@
     "feather",
     "design"
   ],
-  "author": "Leah <npm.leah@hrmny.sh>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ForsakenHarmony/preact-feather/issues"
-  },
-  "homepage": "https://github.com/ForsakenHarmony/preact-feather#readme",
   "devDependencies": {
     "@changesets/changelog-github": "^0.3.0",
     "@changesets/cli": "^2.14.1",
