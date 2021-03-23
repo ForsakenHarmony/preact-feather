@@ -26,25 +26,25 @@
     "feather",
     "design"
   ],
-  "author": "Leah <me@hrmny.sh>",
+  "author": "Leah <npm.leah@hrmny.sh>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ForsakenHarmony/preact-feather/issues"
   },
   "homepage": "https://github.com/ForsakenHarmony/preact-feather#readme",
   "devDependencies": {
-    "@commitlint/cli": "^8.3.4",
-    "@commitlint/config-conventional": "^8.3.4",
-    "camelcase": "^5.3.1",
-    "cheerio": "^1.0.0-rc.3",
-    "feather-icons": "^4.25.0",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "camelcase": "^6.2.0",
+    "cheerio": "^1.0.0-rc.5",
+    "feather-icons": "^4.28.0",
     "glob": "^7.1.6",
-    "husky": "^3.1.0",
-    "lint-staged": "^10.0.0-beta.14",
-    "microbundle": "^0.12.0-next.6",
+    "husky": "^5.2.0",
+    "lint-staged": "^10.5.4",
+    "microbundle": "^0.13.0",
     "ncp": "^2.0.0",
-    "preact": "^10.1.1",
-    "prettier": "^1.19.1",
+    "preact": "^10.5.13",
+    "prettier": "^2.2.1",
     "uppercamelcase": "^3.0.0"
   },
   "peerDependencies": {
