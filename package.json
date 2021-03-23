@@ -15,7 +15,9 @@
     "build:es": "tsc",
     "build:main": "microbundle -f cjs,umd",
     "prettier": "prettier {src,bin}/**/*.{js,ts,tsx} --write",
-    "prepare": "husky install .config/husky"
+    "changeset": "changeset",
+    "prepare": "husky install .config/husky",
+    "release": "yarn build && changeset publish"
   },
   "repository": "ForsakenHarmony/preact-feather.git",
   "keywords": [
@@ -34,6 +36,8 @@
   },
   "homepage": "https://github.com/ForsakenHarmony/preact-feather#readme",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.3.0",
+    "@changesets/cli": "^2.14.1",
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "camelcase": "^6.2.0",
