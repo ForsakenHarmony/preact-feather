@@ -10,11 +10,9 @@ const rootDir = path.join(__dirname, '..');
 
 const icons = Object.keys(featherIcons);
 
-fs.writeFileSync(path.join(rootDir, 'src', 'index.js'), '', 'utf-8');
-
 let allExports = '';
 
-icons.forEach(name => {
+icons.forEach((name) => {
 	const svg = featherIcons[name];
 	const id = name;
 	const camelId = uppercamelcase(id);

@@ -14,7 +14,8 @@
     "build": "node ./bin/build && yarn build:es && yarn build:main",
     "build:es": "tsc",
     "build:main": "microbundle -f cjs,umd",
-    "prettier": "prettier {src,bin}/**/*.{js,ts,tsx} --write"
+    "prettier": "prettier {src,bin}/**/*.{js,ts,tsx} --write",
+    "prepare": "husky install .config/husky"
   },
   "repository": "ForsakenHarmony/preact-feather.git",
   "keywords": [
@@ -36,13 +37,10 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "camelcase": "^6.2.0",
-    "cheerio": "^1.0.0-rc.5",
     "feather-icons": "^4.28.0",
-    "glob": "^7.1.6",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
     "microbundle": "^0.13.0",
-    "ncp": "^2.0.0",
     "preact": "^10.5.13",
     "prettier": "^2.2.1",
     "uppercamelcase": "^3.0.0"
@@ -50,16 +48,9 @@
   "peerDependencies": {
     "preact": "^10.0.0"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "{src,bin}/**/*.{js,ts,tsx}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
