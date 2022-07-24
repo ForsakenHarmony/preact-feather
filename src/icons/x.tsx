@@ -4,8 +4,10 @@ import { FeatherProps } from '../types';
 export const X: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
 	const color = props.color || 'currentColor';
 	const size = props.size || 24;
+	const strokeWidth = props.strokeWidth || 2;
 	delete props.color;
 	delete props.size;
+	delete props.strokeWidth;
 
 	return (
 		<svg
@@ -15,7 +17,7 @@ export const X: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
 			viewBox="0 0 24 24"
 			fill="none"
 			stroke={color}
-			stroke-width="2"
+			stroke-width={strokeWidth}
 			stroke-linecap="round"
 			stroke-linejoin="round"
 			{...props}

@@ -49,5 +49,5 @@ class MyClass extends Component {
 Icons can be configured with inline props:
 
 ```js
-<Icon.AlertCircle color="red" size={48} />
+<Icon.AlertCircle color="red" size={48} strokeWidth={1} />
 ```
