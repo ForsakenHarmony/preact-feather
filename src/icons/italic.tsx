@@ -20,7 +20,7 @@ export const Italic: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="19" y1="4" x2="10" y2="4"></line>
 			<line x1="14" y1="20" x2="5" y2="20"></line>

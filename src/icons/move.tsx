@@ -20,7 +20,7 @@ export const Move: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="5 9 2 12 5 15"></polyline>
 			<polyline points="9 5 12 2 15 5"></polyline>

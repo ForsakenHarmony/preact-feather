@@ -20,7 +20,7 @@ export const Truck: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="1" y="3" width="15" height="13"></rect>
 			<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>

@@ -20,7 +20,7 @@ export const Navigation2: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
 		</svg>

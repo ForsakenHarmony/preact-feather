@@ -20,7 +20,7 @@ export const ChevronLeft: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="15 18 9 12 15 6"></polyline>
 		</svg>

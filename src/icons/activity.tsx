@@ -20,7 +20,7 @@ export const Activity: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
 		</svg>

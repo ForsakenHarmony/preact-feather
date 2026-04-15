@@ -20,7 +20,7 @@ export const StopCircle: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="12" cy="12" r="10"></circle>
 			<rect x="9" y="9" width="6" height="6"></rect>

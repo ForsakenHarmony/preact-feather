@@ -20,7 +20,7 @@ export const GitBranch: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="6" y1="3" x2="6" y2="15"></line>
 			<circle cx="18" cy="6" r="3"></circle>

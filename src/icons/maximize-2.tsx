@@ -20,7 +20,7 @@ export const Maximize2: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="15 3 21 3 21 9"></polyline>
 			<polyline points="9 21 3 21 3 15"></polyline>

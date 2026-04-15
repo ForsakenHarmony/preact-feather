@@ -20,7 +20,7 @@ export const BellOff: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
 			<path d="M18.63 13A17.89 17.89 0 0 1 18 8"></path>

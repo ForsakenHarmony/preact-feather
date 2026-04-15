@@ -20,7 +20,7 @@ export const DownloadCloud: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="8 17 12 21 16 17"></polyline>
 			<line x1="12" y1="12" x2="12" y2="21"></line>

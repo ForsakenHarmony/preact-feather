@@ -20,7 +20,7 @@ export const WifiOff: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="1" y1="1" x2="23" y2="23"></line>
 			<path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>

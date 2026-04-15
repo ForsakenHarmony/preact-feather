@@ -20,7 +20,7 @@ export const Slash: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="12" cy="12" r="10"></circle>
 			<line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>

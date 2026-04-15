@@ -20,7 +20,7 @@ export const Play: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polygon points="5 3 19 12 5 21 5 3"></polygon>
 		</svg>

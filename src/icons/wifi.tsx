@@ -20,7 +20,7 @@ export const Wifi: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
 			<path d="M1.42 9a16 16 0 0 1 21.16 0"></path>

@@ -20,7 +20,7 @@ export const Sunset: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<path d="M17 18a5 5 0 0 0-10 0"></path>
 			<line x1="12" y1="9" x2="12" y2="2"></line>

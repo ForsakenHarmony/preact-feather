@@ -18,7 +18,7 @@ export const Rss: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<path d="M4 11a9 9 0 0 1 9 9"></path>
 			<path d="M4 4a16 16 0 0 1 16 16"></path>

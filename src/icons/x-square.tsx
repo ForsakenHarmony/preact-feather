@@ -20,7 +20,7 @@ export const XSquare: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
 			<line x1="9" y1="9" x2="15" y2="15"></line>

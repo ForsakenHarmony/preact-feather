@@ -20,7 +20,7 @@ export const ToggleRight: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="1" y="5" width="22" height="14" rx="7" ry="7"></rect>
 			<circle cx="16" cy="12" r="3"></circle>

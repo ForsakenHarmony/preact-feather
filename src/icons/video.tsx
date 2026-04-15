@@ -20,7 +20,7 @@ export const Video: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polygon points="23 7 16 12 23 17 23 7"></polygon>
 			<rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>

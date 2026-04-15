@@ -20,7 +20,7 @@ export const Sliders: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="4" y1="21" x2="4" y2="14"></line>
 			<line x1="4" y1="10" x2="4" y2="3"></line>

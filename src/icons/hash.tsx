@@ -20,7 +20,7 @@ export const Hash: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="4" y1="9" x2="20" y2="9"></line>
 			<line x1="4" y1="15" x2="20" y2="15"></line>

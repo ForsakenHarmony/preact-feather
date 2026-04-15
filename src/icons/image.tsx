@@ -20,7 +20,7 @@ export const Image: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
 			<circle cx="8.5" cy="8.5" r="1.5"></circle>

@@ -20,7 +20,7 @@ export const Type: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="4 7 4 4 20 4 20 7"></polyline>
 			<line x1="9" y1="20" x2="15" y2="20"></line>

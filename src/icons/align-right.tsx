@@ -20,7 +20,7 @@ export const AlignRight: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="21" y1="10" x2="7" y2="10"></line>
 			<line x1="21" y1="6" x2="3" y2="6"></line>

@@ -18,7 +18,7 @@ export const Cpu: FunctionalComponent<FeatherProps> = (props: FeatherProps) => {
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
 			<rect x="9" y="9" width="6" height="6"></rect>

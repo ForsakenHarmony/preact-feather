@@ -20,7 +20,7 @@ export const Gift: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="20 12 20 22 4 22 4 12"></polyline>
 			<rect x="2" y="7" width="20" height="5"></rect>

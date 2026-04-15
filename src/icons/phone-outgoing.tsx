@@ -20,7 +20,7 @@ export const PhoneOutgoing: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="23 7 23 1 17 1"></polyline>
 			<line x1="16" y1="8" x2="23" y2="1"></line>

@@ -20,7 +20,7 @@ export const Shuffle: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="16 3 21 3 21 8"></polyline>
 			<line x1="4" y1="20" x2="21" y2="3"></line>
