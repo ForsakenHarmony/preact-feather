@@ -6,18 +6,19 @@
   "repository": "ForsakenHarmony/preact-feather.git",
   "author": "Leah <npm.leah@hrmny.sh>",
   "license": "MIT",
+  "packageManager": "pnpm@11.5.1+sha512.93f7b57422ea7068257235b4c16eb60762eb68e1dc23723199cc739043ea9be2c4143274a399d8c6defa2b1176226d9ca1c4b63482d6200c1a8fbaa78c1d1485",
   "bugs": {
     "url": "https://github.com/ForsakenHarmony/preact-feather/issues"
   },
   "scripts": {
     "test": "exit 0",
-    "build": "node ./bin/build && yarn build:es && yarn build:main",
+    "build": "node ./bin/build && pnpm build:es && pnpm build:main",
     "build:es": "tsc",
-    "build:main": "microbundle -f cjs,umd",
+    "build:main": "microbundle --entry dist/index.js -f cjs,umd",
     "prettier": "prettier {src,bin}/**/*.{js,ts,tsx} --write",
     "changeset": "changeset",
     "prepare": "husky install .config/husky",
-    "release": "yarn build && changeset publish"
+    "release": "pnpm build && changeset publish"
   },
   "source": "src/index.ts",
   "main": "dist/index.cjs.js",
@@ -48,9 +49,10 @@
     "feather-icons": "^4.28.0",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
-    "microbundle": "^0.13.0",
+    "microbundle": "^0.15.1",
     "preact": "^10.5.13",
     "prettier": "^2.2.1",
+    "typescript": "^4.9.5",
     "uppercamelcase": "^3.0.0"
   },
   "peerDependencies": {
