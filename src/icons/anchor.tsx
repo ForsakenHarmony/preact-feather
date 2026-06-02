@@ -20,7 +20,7 @@ export const Anchor: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="12" cy="5" r="3"></circle>
 			<line x1="12" y1="22" x2="12" y2="8"></line>

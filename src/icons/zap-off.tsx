@@ -20,7 +20,7 @@ export const ZapOff: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="12.41 6.75 13 2 10.57 4.92"></polyline>
 			<polyline points="18.57 12.91 21 10 15.66 10"></polyline>

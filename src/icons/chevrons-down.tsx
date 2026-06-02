@@ -20,7 +20,7 @@ export const ChevronsDown: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="7 13 12 18 17 13"></polyline>
 			<polyline points="7 6 12 11 17 6"></polyline>

@@ -20,7 +20,7 @@ export const ArrowUp: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="12" y1="19" x2="12" y2="5"></line>
 			<polyline points="5 12 12 5 19 12"></polyline>

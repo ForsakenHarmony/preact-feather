@@ -20,7 +20,7 @@ export const Voicemail: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="5.5" cy="11.5" r="4.5"></circle>
 			<circle cx="18.5" cy="11.5" r="4.5"></circle>

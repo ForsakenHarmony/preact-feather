@@ -40,7 +40,7 @@ icons.forEach((name) => {
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          {...props}
+          {...props as Omit<typeof props, 'color' | 'size'>}
         >
           ${svg}
         </svg>

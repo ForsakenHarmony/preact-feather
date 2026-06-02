@@ -20,7 +20,7 @@ export const PenTool: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<path d="M12 19l7-7 3 3-7 7-3-3z"></path>
 			<path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>

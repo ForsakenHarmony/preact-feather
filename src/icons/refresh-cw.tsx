@@ -20,7 +20,7 @@ export const RefreshCw: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polyline points="23 4 23 10 17 10"></polyline>
 			<polyline points="1 20 1 14 7 14"></polyline>

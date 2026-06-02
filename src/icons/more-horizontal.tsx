@@ -20,7 +20,7 @@ export const MoreHorizontal: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="12" cy="12" r="1"></circle>
 			<circle cx="19" cy="12" r="1"></circle>

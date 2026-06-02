@@ -20,7 +20,7 @@ export const FastForward: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<polygon points="13 19 22 12 13 5 13 19"></polygon>
 			<polygon points="2 19 11 12 2 5 2 19"></polygon>

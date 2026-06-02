@@ -20,7 +20,7 @@ export const Chrome: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="12" cy="12" r="10"></circle>
 			<circle cx="12" cy="12" r="4"></circle>

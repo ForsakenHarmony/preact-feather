@@ -20,7 +20,7 @@ export const Droplet: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
 		</svg>

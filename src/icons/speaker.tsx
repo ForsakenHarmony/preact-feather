@@ -20,7 +20,7 @@ export const Speaker: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
 			<circle cx="12" cy="14" r="4"></circle>

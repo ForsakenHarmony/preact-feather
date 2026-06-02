@@ -20,7 +20,7 @@ export const Aperture: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="12" cy="12" r="10"></circle>
 			<line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>

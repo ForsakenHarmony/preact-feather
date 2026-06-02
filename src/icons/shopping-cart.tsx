@@ -20,7 +20,7 @@ export const ShoppingCart: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="9" cy="21" r="1"></circle>
 			<circle cx="20" cy="21" r="1"></circle>

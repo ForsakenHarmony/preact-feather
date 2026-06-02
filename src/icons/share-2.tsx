@@ -20,7 +20,7 @@ export const Share2: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="18" cy="5" r="3"></circle>
 			<circle cx="6" cy="12" r="3"></circle>

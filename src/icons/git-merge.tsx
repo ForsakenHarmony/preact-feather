@@ -20,7 +20,7 @@ export const GitMerge: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<circle cx="18" cy="18" r="3"></circle>
 			<circle cx="6" cy="6" r="3"></circle>

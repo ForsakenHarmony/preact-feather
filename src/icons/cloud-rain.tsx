@@ -20,7 +20,7 @@ export const CloudRain: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<line x1="16" y1="13" x2="16" y2="21"></line>
 			<line x1="8" y1="13" x2="8" y2="21"></line>

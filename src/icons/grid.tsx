@@ -20,7 +20,7 @@ export const Grid: FunctionalComponent<FeatherProps> = (
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			{...props}
+			{...(props as Omit<typeof props, 'color' | 'size'>)}
 		>
 			<rect x="3" y="3" width="7" height="7"></rect>
 			<rect x="14" y="3" width="7" height="7"></rect>
