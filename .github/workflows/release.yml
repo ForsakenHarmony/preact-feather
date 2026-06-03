@@ -6,6 +6,7 @@ on:
       - master
 
 permissions:
+  id-token: write # to publish to npm using trusted publishing
   contents: write # to create release (changesets/action)
   issues: write # to post issue comments (changesets/action)
   pull-requests: write # to create pull request (changesets/action)
@@ -29,6 +30,7 @@ jobs:
         with:
           node-version: 24.x
           cache: pnpm
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -39,5 +41,3 @@ jobs:
         with:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: pnpm release
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
